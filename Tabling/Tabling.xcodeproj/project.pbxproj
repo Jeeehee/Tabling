@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E533A00168F4C8219A9CA1E /* Pods_Tabling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0403D2BADA66A98033467E /* Pods_Tabling.framework */; };
 		736360B12963D7CA00EBCC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360B02963D7CA00EBCC18 /* AppDelegate.swift */; };
 		736360B32963D7CA00EBCC18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360B22963D7CA00EBCC18 /* SceneDelegate.swift */; };
 		736360B52963D7CA00EBCC18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360B42963D7CA00EBCC18 /* ViewController.swift */; };
@@ -20,9 +21,12 @@
 		736360D32963E02B00EBCC18 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 736360D02963E02B00EBCC18 /* Roboto-Medium.ttf */; };
 		736360D42963E02B00EBCC18 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 736360D12963E02B00EBCC18 /* Roboto-Regular.ttf */; };
 		736360D62963E0BD00EBCC18 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360D52963E0BD00EBCC18 /* Font.swift */; };
+		736360DA2963E69B00EBCC18 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 736360D92963E69B00EBCC18 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0403D2BADA66A98033467E /* Pods_Tabling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62CD8E8EDAA8C84085C636DE /* Pods-Tabling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling.release.xcconfig"; path = "Target Support Files/Pods-Tabling/Pods-Tabling.release.xcconfig"; sourceTree = "<group>"; };
 		736360AD2963D7CA00EBCC18 /* Tabling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		736360B02963D7CA00EBCC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		736360B22963D7CA00EBCC18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		736360D02963E02B00EBCC18 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		736360D12963E02B00EBCC18 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		736360D52963E0BD00EBCC18 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		736360D92963E69B00EBCC18 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling.debug.xcconfig"; path = "Target Support Files/Pods-Tabling/Pods-Tabling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E533A00168F4C8219A9CA1E /* Pods_Tabling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,8 +61,11 @@
 		736360A42963D7CA00EBCC18 = {
 			isa = PBXGroup;
 			children = (
+				736360D92963E69B00EBCC18 /* .swiftlint.yml */,
 				736360AF2963D7CA00EBCC18 /* Tabling */,
 				736360AE2963D7CA00EBCC18 /* Products */,
+				C54F809FB6DCF3BB17D77253 /* Pods */,
+				AA92AB6D7447E532F591F29A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +138,23 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		AA92AB6D7447E532F591F29A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D0403D2BADA66A98033467E /* Pods_Tabling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C54F809FB6DCF3BB17D77253 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */,
+				62CD8E8EDAA8C84085C636DE /* Pods-Tabling.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +162,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 736360C12963D7CC00EBCC18 /* Build configuration list for PBXNativeTarget "Tabling" */;
 			buildPhases = (
+				8E3879C8EE9F9423755CFADD /* [CP] Check Pods Manifest.lock */,
+				736360DB2963E71400EBCC18 /* Run SwiftLint */,
 				736360A92963D7CA00EBCC18 /* Sources */,
 				736360AA2963D7CA00EBCC18 /* Frameworks */,
 				736360AB2963D7CA00EBCC18 /* Resources */,
@@ -186,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736360DA2963E69B00EBCC18 /* .swiftlint.yml in Resources */,
 				736360D32963E02B00EBCC18 /* Roboto-Medium.ttf in Resources */,
 				736360D22963E02B00EBCC18 /* Roboto-Bold.ttf in Resources */,
 				736360CD2963DFFF00EBCC18 /* NotoSansKR-Medium.otf in Resources */,
@@ -199,6 +229,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		736360DB2963E71400EBCC18 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		8E3879C8EE9F9423755CFADD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tabling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		736360A92963D7CA00EBCC18 /* Sources */ = {
@@ -350,6 +423,7 @@
 		};
 		736360C22963D7CC00EBCC18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -379,6 +453,7 @@
 		};
 		736360C32963D7CC00EBCC18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62CD8E8EDAA8C84085C636DE /* Pods-Tabling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
