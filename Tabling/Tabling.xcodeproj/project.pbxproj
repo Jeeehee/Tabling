@@ -13,6 +13,13 @@
 		736360B82963D7CA00EBCC18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 736360B62963D7CA00EBCC18 /* Main.storyboard */; };
 		736360BA2963D7CC00EBCC18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736360B92963D7CC00EBCC18 /* Assets.xcassets */; };
 		736360BD2963D7CC00EBCC18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 736360BB2963D7CC00EBCC18 /* LaunchScreen.storyboard */; };
+		736360CB2963DFFF00EBCC18 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 736360C82963DFFF00EBCC18 /* NotoSansKR-Regular.otf */; };
+		736360CC2963DFFF00EBCC18 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 736360C92963DFFF00EBCC18 /* NotoSansKR-Bold.otf */; };
+		736360CD2963DFFF00EBCC18 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 736360CA2963DFFF00EBCC18 /* NotoSansKR-Medium.otf */; };
+		736360D22963E02B00EBCC18 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 736360CF2963E02B00EBCC18 /* Roboto-Bold.ttf */; };
+		736360D32963E02B00EBCC18 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 736360D02963E02B00EBCC18 /* Roboto-Medium.ttf */; };
+		736360D42963E02B00EBCC18 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 736360D12963E02B00EBCC18 /* Roboto-Regular.ttf */; };
+		736360D62963E0BD00EBCC18 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360D52963E0BD00EBCC18 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		736360B92963D7CC00EBCC18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		736360BC2963D7CC00EBCC18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		736360BE2963D7CC00EBCC18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		736360C82963DFFF00EBCC18 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		736360C92963DFFF00EBCC18 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		736360CA2963DFFF00EBCC18 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		736360CF2963E02B00EBCC18 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		736360D02963E02B00EBCC18 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		736360D12963E02B00EBCC18 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		736360D52963E0BD00EBCC18 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,7 @@
 		736360C52963DD8C00EBCC18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				736360C72963DF7000EBCC18 /* Common */,
 				736360B62963D7CA00EBCC18 /* Main.storyboard */,
 				736360B42963D7CA00EBCC18 /* ViewController.swift */,
 			);
@@ -84,11 +99,33 @@
 		736360C62963DDA300EBCC18 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				736360CE2963E00400EBCC18 /* Font */,
 				736360B92963D7CC00EBCC18 /* Assets.xcassets */,
 				736360BB2963D7CC00EBCC18 /* LaunchScreen.storyboard */,
 				736360BE2963D7CC00EBCC18 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		736360C72963DF7000EBCC18 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				736360D52963E0BD00EBCC18 /* Font.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		736360CE2963E00400EBCC18 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				736360CF2963E02B00EBCC18 /* Roboto-Bold.ttf */,
+				736360D02963E02B00EBCC18 /* Roboto-Medium.ttf */,
+				736360D12963E02B00EBCC18 /* Roboto-Regular.ttf */,
+				736360C92963DFFF00EBCC18 /* NotoSansKR-Bold.otf */,
+				736360CA2963DFFF00EBCC18 /* NotoSansKR-Medium.otf */,
+				736360C82963DFFF00EBCC18 /* NotoSansKR-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +186,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736360D32963E02B00EBCC18 /* Roboto-Medium.ttf in Resources */,
+				736360D22963E02B00EBCC18 /* Roboto-Bold.ttf in Resources */,
+				736360CD2963DFFF00EBCC18 /* NotoSansKR-Medium.otf in Resources */,
 				736360BD2963D7CC00EBCC18 /* LaunchScreen.storyboard in Resources */,
 				736360BA2963D7CC00EBCC18 /* Assets.xcassets in Resources */,
+				736360CB2963DFFF00EBCC18 /* NotoSansKR-Regular.otf in Resources */,
+				736360D42963E02B00EBCC18 /* Roboto-Regular.ttf in Resources */,
 				736360B82963D7CA00EBCC18 /* Main.storyboard in Resources */,
+				736360CC2963DFFF00EBCC18 /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736360D62963E0BD00EBCC18 /* Font.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* ViewController.swift in Sources */,
 				736360B12963D7CA00EBCC18 /* AppDelegate.swift in Sources */,
 				736360B32963D7CA00EBCC18 /* SceneDelegate.swift in Sources */,
