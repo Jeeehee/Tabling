@@ -8,7 +8,9 @@
 import UIKit
 
 class TabCollectionViewCell: UICollectionViewCell {
-    static let identifier = "TabCollectionViewCell"
+    static var identifier: String {
+        return "\(self)"
+    }
     
     @IBOutlet weak var titleLabel: UILabel!
     

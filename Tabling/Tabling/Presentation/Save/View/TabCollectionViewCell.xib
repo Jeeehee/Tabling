@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZF-tb-OFh">
-                        <rect key="frame" x="4" y="14.666666666666664" width="42" height="21"/>
+                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="PZF-tb-OFh" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="8Iu-Fo-EOf"/>
-                <constraint firstItem="PZF-tb-OFh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="w3a-Oh-yJR"/>
+                <constraint firstItem="PZF-tb-OFh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Dsm-Oi-TO0"/>
+                <constraint firstItem="PZF-tb-OFh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hmR-Do-6NP"/>
             </constraints>
             <connections>
                 <outlet property="titleLabel" destination="PZF-tb-OFh" id="We2-3j-lQQ"/>
