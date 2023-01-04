@@ -29,6 +29,7 @@
 		736360EE296458BB00EBCC18 /* SaveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */; };
 		736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */; };
 		736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */; };
+		73D04CA12965A830009184D4 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA02965A830009184D4 /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveCollectionViewCell.xib; sourceTree = "<group>"; };
 		736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		73D04CA02965A830009184D4 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling.debug.xcconfig"; path = "Target Support Files/Pods-Tabling/Pods-Tabling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		736360AF2963D7CA00EBCC18 /* Tabling */ = {
 			isa = PBXGroup;
 			children = (
+				73D04C9E2965A7E4009184D4 /* Domain */,
 				736360C42963DCC800EBCC18 /* Application */,
 				736360C52963DD8C00EBCC18 /* Presentation */,
 				736360C62963DDA300EBCC18 /* Resources */,
@@ -181,6 +184,22 @@
 				736360EB296458BB00EBCC18 /* SaveCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		73D04C9E2965A7E4009184D4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				73D04C9F2965A7F1009184D4 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		73D04C9F2965A7F1009184D4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CA02965A830009184D4 /* List.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		AA92AB6D7447E532F591F29A /* Frameworks */ = {
@@ -329,6 +348,7 @@
 				736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */,
 				736360DE29641DCF00EBCC18 /* TabCollectionViewCell.swift in Sources */,
 				736360D62963E0BD00EBCC18 /* Font.swift in Sources */,
+				73D04CA12965A830009184D4 /* List.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* SaveViewController.swift in Sources */,
 				736360ED296458BB00EBCC18 /* SaveCollectionViewCell.swift in Sources */,
 				736360B12963D7CA00EBCC18 /* AppDelegate.swift in Sources */,
