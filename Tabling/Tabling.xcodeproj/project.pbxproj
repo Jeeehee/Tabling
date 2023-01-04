@@ -25,6 +25,10 @@
 		736360DF29641DCF00EBCC18 /* TabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736360DD29641DCF00EBCC18 /* TabCollectionViewCell.xib */; };
 		736360E129641F1F00EBCC18 /* SaveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 736360E029641F1F00EBCC18 /* SaveView.storyboard */; };
 		736360E3296451CC00EBCC18 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360E2296451CC00EBCC18 /* TabType.swift */; };
+		736360ED296458BB00EBCC18 /* SaveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360EB296458BB00EBCC18 /* SaveCollectionViewCell.swift */; };
+		736360EE296458BB00EBCC18 /* SaveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */; };
+		736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */; };
+		736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		736360DD29641DCF00EBCC18 /* TabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabCollectionViewCell.xib; sourceTree = "<group>"; };
 		736360E029641F1F00EBCC18 /* SaveView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SaveView.storyboard; sourceTree = "<group>"; };
 		736360E2296451CC00EBCC18 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
+		736360EB296458BB00EBCC18 /* SaveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCollectionViewCell.swift; sourceTree = "<group>"; };
+		736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveCollectionViewCell.xib; sourceTree = "<group>"; };
+		736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling.debug.xcconfig"; path = "Target Support Files/Pods-Tabling/Pods-Tabling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +156,8 @@
 		736360E42964520100EBCC18 /* Save */ = {
 			isa = PBXGroup;
 			children = (
+				736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */,
+				736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */,
 				736360E62964523500EBCC18 /* View */,
 			);
 			path = Save;
@@ -167,6 +177,8 @@
 				736360B42963D7CA00EBCC18 /* SaveViewController.swift */,
 				736360DD29641DCF00EBCC18 /* TabCollectionViewCell.xib */,
 				736360DC29641DCF00EBCC18 /* TabCollectionViewCell.swift */,
+				736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */,
+				736360EB296458BB00EBCC18 /* SaveCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 				736360BD2963D7CC00EBCC18 /* LaunchScreen.storyboard in Resources */,
 				736360BA2963D7CC00EBCC18 /* Assets.xcassets in Resources */,
 				736360CB2963DFFF00EBCC18 /* NotoSansKR-Regular.otf in Resources */,
+				736360EE296458BB00EBCC18 /* SaveCollectionViewCell.xib in Resources */,
 				736360D42963E02B00EBCC18 /* Roboto-Regular.ttf in Resources */,
 				736360CC2963DFFF00EBCC18 /* NotoSansKR-Bold.otf in Resources */,
 			);
@@ -313,10 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */,
 				736360DE29641DCF00EBCC18 /* TabCollectionViewCell.swift in Sources */,
 				736360D62963E0BD00EBCC18 /* Font.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* SaveViewController.swift in Sources */,
+				736360ED296458BB00EBCC18 /* SaveCollectionViewCell.swift in Sources */,
 				736360B12963D7CA00EBCC18 /* AppDelegate.swift in Sources */,
+				736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */,
 				736360B32963D7CA00EBCC18 /* SceneDelegate.swift in Sources */,
 				736360E3296451CC00EBCC18 /* TabType.swift in Sources */,
 			);
