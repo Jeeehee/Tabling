@@ -30,6 +30,9 @@
 		736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */; };
 		736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */; };
 		73D04CA12965A830009184D4 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA02965A830009184D4 /* List.swift */; };
+		73D04CA52965AB8C009184D4 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA42965AB8C009184D4 /* Requestable.swift */; };
+		73D04CA72965AC65009184D4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA62965AC65009184D4 /* EndPoint.swift */; };
+		73D04CA92965B1F1009184D4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA82965B1F1009184D4 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		73D04CA02965A830009184D4 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		73D04CA42965AB8C009184D4 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		73D04CA62965AC65009184D4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		73D04CA82965B1F1009184D4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling.debug.xcconfig"; path = "Target Support Files/Pods-Tabling/Pods-Tabling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +102,7 @@
 		736360AF2963D7CA00EBCC18 /* Tabling */ = {
 			isa = PBXGroup;
 			children = (
+				73D04CA22965A9B4009184D4 /* Data */,
 				73D04C9E2965A7E4009184D4 /* Domain */,
 				736360C42963DCC800EBCC18 /* Application */,
 				736360C52963DD8C00EBCC18 /* Presentation */,
@@ -200,6 +207,24 @@
 				73D04CA02965A830009184D4 /* List.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		73D04CA22965A9B4009184D4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CA32965AB7F009184D4 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		73D04CA32965AB7F009184D4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CA42965AB8C009184D4 /* Requestable.swift */,
+				73D04CA62965AC65009184D4 /* EndPoint.swift */,
+				73D04CA82965B1F1009184D4 /* NetworkError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		AA92AB6D7447E532F591F29A /* Frameworks */ = {
@@ -351,9 +376,12 @@
 				73D04CA12965A830009184D4 /* List.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* SaveViewController.swift in Sources */,
 				736360ED296458BB00EBCC18 /* SaveCollectionViewCell.swift in Sources */,
+				73D04CA72965AC65009184D4 /* EndPoint.swift in Sources */,
 				736360B12963D7CA00EBCC18 /* AppDelegate.swift in Sources */,
 				736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */,
 				736360B32963D7CA00EBCC18 /* SceneDelegate.swift in Sources */,
+				73D04CA92965B1F1009184D4 /* NetworkError.swift in Sources */,
+				73D04CA52965AB8C009184D4 /* Requestable.swift in Sources */,
 				736360E3296451CC00EBCC18 /* TabType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
