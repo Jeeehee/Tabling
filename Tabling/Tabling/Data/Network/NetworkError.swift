@@ -8,8 +8,11 @@
 import Foundation
 
 enum NetworkError: Error {
+    case reponseFailed
     case invalidStatusCode(statusCode: Int)
     case invalidURL
     case emptyData
     case decodeFailed
+    case requestFailed
+    case error(error: Error)
 }
