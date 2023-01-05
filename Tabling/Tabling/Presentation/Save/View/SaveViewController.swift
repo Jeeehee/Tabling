@@ -8,6 +8,8 @@
 import UIKit
 
 class SaveViewController: UIViewController {
+    private var viewModel: ListViewModelProtocol?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tabCollectionView: UICollectionView!
     @IBOutlet weak var contentsCollectionView: UICollectionView!
@@ -15,12 +17,18 @@ class SaveViewController: UIViewController {
     private let tabCollectionViewDelegateNDataSource = TabCollectionViewDataSource()
     private let contentCollectionViewDelegateNDataSource = ContentsCollectionViewDataSource()
     
+    convenience init(viewModel: ListViewModelProtocol) {
+        self.init()
+        self.viewModel = viewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
         setUpTabCollectionView()
         setUpContentsCollectionView()
+        viewModel?.input.viewDidLoad()
     }
     
     private func configureView() {
