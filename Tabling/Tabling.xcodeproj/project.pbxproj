@@ -29,10 +29,20 @@
 		736360EE296458BB00EBCC18 /* SaveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */; };
 		736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */; };
 		736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */; };
+		738C73222966E55000F6E4ED /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73202966E55000F6E4ED /* Requestable.swift */; };
+		738C73232966E55000F6E4ED /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73212966E55000F6E4ED /* EndPoint.swift */; };
 		73D04CA12965A830009184D4 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA02965A830009184D4 /* List.swift */; };
-		73D04CA52965AB8C009184D4 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA42965AB8C009184D4 /* Requestable.swift */; };
-		73D04CA72965AC65009184D4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA62965AC65009184D4 /* EndPoint.swift */; };
 		73D04CA92965B1F1009184D4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA82965B1F1009184D4 /* NetworkError.swift */; };
+		73D04CAB2965B308009184D4 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */; };
+		73D04CAE2965B3F8009184D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CAD2965B3F8009184D4 /* NetworkService.swift */; };
+		73D04CB329666B03009184D4 /* ListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CB229666B03009184D4 /* ListRepositoryImpl.swift */; };
+		73D04CB5296697FD009184D4 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CB4296697FD009184D4 /* ListRepository.swift */; };
+		73D04CB829669F85009184D4 /* ImageCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CB729669F85009184D4 /* ImageCacheStorage.swift */; };
+		73D04CBA2966C854009184D4 /* FetchImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CB92966C854009184D4 /* FetchImageUseCase.swift */; };
+		73D04CBC2966CBC0009184D4 /* FetchListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CBB2966CBC0009184D4 /* FetchListUseCase.swift */; };
+		73D04CBE2966CC79009184D4 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CBD2966CC79009184D4 /* ImageRepository.swift */; };
+		73D04CC02966CCB1009184D4 /* ImageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CBF2966CCB1009184D4 /* ImageRepositoryImpl.swift */; };
+		73D04CC22966D048009184D4 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CC12966D048009184D4 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,10 +71,20 @@
 		736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveCollectionViewCell.xib; sourceTree = "<group>"; };
 		736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		738C73202966E55000F6E4ED /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		738C73212966E55000F6E4ED /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		73D04CA02965A830009184D4 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		73D04CA42965AB8C009184D4 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		73D04CA62965AC65009184D4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		73D04CA82965B1F1009184D4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		73D04CAD2965B3F8009184D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		73D04CB229666B03009184D4 /* ListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepositoryImpl.swift; sourceTree = "<group>"; };
+		73D04CB4296697FD009184D4 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
+		73D04CB729669F85009184D4 /* ImageCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheStorage.swift; sourceTree = "<group>"; };
+		73D04CB92966C854009184D4 /* FetchImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageUseCase.swift; sourceTree = "<group>"; };
+		73D04CBB2966CBC0009184D4 /* FetchListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListUseCase.swift; sourceTree = "<group>"; };
+		73D04CBD2966CC79009184D4 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		73D04CBF2966CCB1009184D4 /* ImageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryImpl.swift; sourceTree = "<group>"; };
+		73D04CC12966D048009184D4 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		EB3BEE8210AD74232CC8B655 /* Pods-Tabling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabling.debug.xcconfig"; path = "Target Support Files/Pods-Tabling/Pods-Tabling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,14 +209,27 @@
 				736360DC29641DCF00EBCC18 /* TabCollectionViewCell.swift */,
 				736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */,
 				736360EB296458BB00EBCC18 /* SaveCollectionViewCell.swift */,
+				73D04CC12966D048009184D4 /* ListViewModel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		738C731F2966E55000F6E4ED /* API */ = {
+			isa = PBXGroup;
+			children = (
+				738C73202966E55000F6E4ED /* Requestable.swift */,
+				738C73212966E55000F6E4ED /* EndPoint.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		73D04C9E2965A7E4009184D4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				73D04C9F2965A7F1009184D4 /* Entities */,
+				73D04CB4296697FD009184D4 /* ListRepository.swift */,
+				73D04CBD2966CC79009184D4 /* ImageRepository.swift */,
+				73D04CB92966C854009184D4 /* FetchImageUseCase.swift */,
+				73D04CBB2966CBC0009184D4 /* FetchListUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -212,6 +245,9 @@
 		73D04CA22965A9B4009184D4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				73D04CB629669F64009184D4 /* Persistent */,
+				73D04C9F2965A7F1009184D4 /* Entities */,
+				73D04CAF296669DF009184D4 /* Repository */,
 				73D04CA32965AB7F009184D4 /* Network */,
 			);
 			path = Data;
@@ -220,11 +256,29 @@
 		73D04CA32965AB7F009184D4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				73D04CA42965AB8C009184D4 /* Requestable.swift */,
-				73D04CA62965AC65009184D4 /* EndPoint.swift */,
+				738C731F2966E55000F6E4ED /* API */,
 				73D04CA82965B1F1009184D4 /* NetworkError.swift */,
+				73D04CAD2965B3F8009184D4 /* NetworkService.swift */,
+				73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		73D04CAF296669DF009184D4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CB229666B03009184D4 /* ListRepositoryImpl.swift */,
+				73D04CBF2966CCB1009184D4 /* ImageRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		73D04CB629669F64009184D4 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CB729669F85009184D4 /* ImageCacheStorage.swift */,
+			);
+			path = Persistent;
 			sourceTree = "<group>";
 		};
 		AA92AB6D7447E532F591F29A /* Frameworks */ = {
@@ -370,19 +424,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D04CBC2966CBC0009184D4 /* FetchListUseCase.swift in Sources */,
+				73D04CAB2965B308009184D4 /* URLSessionProtocol.swift in Sources */,
 				736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */,
+				73D04CC02966CCB1009184D4 /* ImageRepositoryImpl.swift in Sources */,
 				736360DE29641DCF00EBCC18 /* TabCollectionViewCell.swift in Sources */,
 				736360D62963E0BD00EBCC18 /* Font.swift in Sources */,
+				73D04CB329666B03009184D4 /* ListRepositoryImpl.swift in Sources */,
 				73D04CA12965A830009184D4 /* List.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* SaveViewController.swift in Sources */,
+				738C73222966E55000F6E4ED /* Requestable.swift in Sources */,
+				73D04CAE2965B3F8009184D4 /* NetworkService.swift in Sources */,
 				736360ED296458BB00EBCC18 /* SaveCollectionViewCell.swift in Sources */,
-				73D04CA72965AC65009184D4 /* EndPoint.swift in Sources */,
+				738C73232966E55000F6E4ED /* EndPoint.swift in Sources */,
+				73D04CC22966D048009184D4 /* ListViewModel.swift in Sources */,
 				736360B12963D7CA00EBCC18 /* AppDelegate.swift in Sources */,
 				736360F029645B2C00EBCC18 /* TabCollectionViewDataSource.swift in Sources */,
+				73D04CBE2966CC79009184D4 /* ImageRepository.swift in Sources */,
+				73D04CB5296697FD009184D4 /* ListRepository.swift in Sources */,
+				73D04CB829669F85009184D4 /* ImageCacheStorage.swift in Sources */,
 				736360B32963D7CA00EBCC18 /* SceneDelegate.swift in Sources */,
 				73D04CA92965B1F1009184D4 /* NetworkError.swift in Sources */,
-				73D04CA52965AB8C009184D4 /* Requestable.swift in Sources */,
 				736360E3296451CC00EBCC18 /* TabType.swift in Sources */,
+				73D04CBA2966C854009184D4 /* FetchImageUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
