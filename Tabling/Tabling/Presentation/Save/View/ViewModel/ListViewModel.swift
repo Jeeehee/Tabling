@@ -12,7 +12,7 @@ protocol ListViewModelInput {
 }
 
 protocol ListViewModelOutput {
-//    var items: Observable<[List]> { get }
+    var items: Observable<[Restaurant]> { get }
 }
 
 protocol ListViewModelProtocol: ListViewModelInput, ListViewModelOutput {
@@ -25,7 +25,10 @@ final class ListViewModel: ListViewModelProtocol {
     var output: ListViewModelOutput { self }
     
     private let useCase: FetchListUseCase
-    private var list: [List] = []
+    private var list: [Restaurant] = []
+    
+    // MARK: - OUTPUT
+    var items: Observable<[Restaurant]> = Observable([])
     
     init(fetchListUseCase: FetchListUseCase) {
         self.useCase = fetchListUseCase
@@ -33,11 +36,11 @@ final class ListViewModel: ListViewModelProtocol {
     
     private func load() {
         guard let urlRequest = EndPoint.save.urlRequest else { return }
-        useCase.start(List.self, request: urlRequest) { [weak self] result in
+        useCase.start(List.self, request: urlRequest) { result in
             switch result {
             case .success(let data):
-                self?.list = [data]
-                print(data)
+                self.list = data.list
+                self.mappingData()
             case .failure(let failure):
                 print("Error")
             }
@@ -46,7 +49,13 @@ final class ListViewModel: ListViewModelProtocol {
 }
 
 extension ListViewModel {
+    // MARK: - INPUT, View event methods
     func viewDidLoad() {
         load()
+    }
+    
+    // MARK: - Private function
+    private func mappingData() {
+        items.value = list
     }
 }
