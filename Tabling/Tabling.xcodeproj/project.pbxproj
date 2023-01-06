@@ -31,6 +31,12 @@
 		736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */; };
 		738C73222966E55000F6E4ED /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73202966E55000F6E4ED /* Requestable.swift */; };
 		738C73232966E55000F6E4ED /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73212966E55000F6E4ED /* EndPoint.swift */; };
+		738C732A2966FB1200F6E4ED /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73292966FB1200F6E4ED /* Observable.swift */; };
+		738C732E2967C88500F6E4ED /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C732D2967C88500F6E4ED /* PaddingLabel.swift */; };
+		738C73312967D8D900F6E4ED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73302967D8D900F6E4ED /* UIColor+Extension.swift */; };
+		738C7333296802CB00F6E4ED /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C7332296802CB00F6E4ED /* BadgeType.swift */; };
+		738C7337296803E200F6E4ED /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C7336296803E200F6E4ED /* BaseCoordinator.swift */; };
+		738C73392968054100F6E4ED /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73382968054100F6E4ED /* DIContainer.swift */; };
 		73D04CA12965A830009184D4 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA02965A830009184D4 /* List.swift */; };
 		73D04CA92965B1F1009184D4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA82965B1F1009184D4 /* NetworkError.swift */; };
 		73D04CAB2965B308009184D4 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */; };
@@ -73,6 +79,12 @@
 		736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		738C73202966E55000F6E4ED /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		738C73212966E55000F6E4ED /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		738C73292966FB1200F6E4ED /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		738C732D2967C88500F6E4ED /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		738C73302967D8D900F6E4ED /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		738C7332296802CB00F6E4ED /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
+		738C7336296803E200F6E4ED /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		738C73382968054100F6E4ED /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		73D04CA02965A830009184D4 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		73D04CA82965B1F1009184D4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
@@ -122,9 +134,9 @@
 		736360AF2963D7CA00EBCC18 /* Tabling */ = {
 			isa = PBXGroup;
 			children = (
+				736360C42963DCC800EBCC18 /* Application */,
 				73D04CA22965A9B4009184D4 /* Data */,
 				73D04C9E2965A7E4009184D4 /* Domain */,
-				736360C42963DCC800EBCC18 /* Application */,
 				736360C52963DD8C00EBCC18 /* Presentation */,
 				736360C62963DDA300EBCC18 /* Resources */,
 			);
@@ -134,8 +146,10 @@
 		736360C42963DCC800EBCC18 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				738C7335296803CB00F6E4ED /* Coordinator */,
 				736360B02963D7CA00EBCC18 /* AppDelegate.swift */,
 				736360B22963D7CA00EBCC18 /* SceneDelegate.swift */,
+				738C73382968054100F6E4ED /* DIContainer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -143,7 +157,8 @@
 		736360C52963DD8C00EBCC18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				736360E2296451CC00EBCC18 /* TabType.swift */,
+				738C732F2967D89200F6E4ED /* Extension */,
+				738C73282966FAF800F6E4ED /* Util */,
 				736360C72963DF7000EBCC18 /* Common */,
 				736360E52964520800EBCC18 /* Recent */,
 				736360E42964520100EBCC18 /* Save */,
@@ -166,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				736360D52963E0BD00EBCC18 /* Font.swift */,
+				738C732D2967C88500F6E4ED /* PaddingLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -188,6 +204,7 @@
 			children = (
 				736360EF29645B2C00EBCC18 /* TabCollectionViewDataSource.swift */,
 				736360F129645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift */,
+				738C73252966F90A00F6E4ED /* ViewModel */,
 				736360E62964523500EBCC18 /* View */,
 			);
 			path = Save;
@@ -209,7 +226,6 @@
 				736360DC29641DCF00EBCC18 /* TabCollectionViewCell.swift */,
 				736360EC296458BB00EBCC18 /* SaveCollectionViewCell.xib */,
 				736360EB296458BB00EBCC18 /* SaveCollectionViewCell.swift */,
-				73D04CC12966D048009184D4 /* ListViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,13 +239,55 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		738C73252966F90A00F6E4ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CC12966D048009184D4 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		738C73282966FAF800F6E4ED /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				738C73292966FB1200F6E4ED /* Observable.swift */,
+				736360E2296451CC00EBCC18 /* TabType.swift */,
+				738C7332296802CB00F6E4ED /* BadgeType.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		738C732F2967D89200F6E4ED /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				738C73302967D8D900F6E4ED /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		738C7334296803B400F6E4ED /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				73D04CBB2966CBC0009184D4 /* FetchListUseCase.swift */,
+				73D04CB92966C854009184D4 /* FetchImageUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		738C7335296803CB00F6E4ED /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				738C7336296803E200F6E4ED /* BaseCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		73D04C9E2965A7E4009184D4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				738C7334296803B400F6E4ED /* UseCase */,
 				73D04CB4296697FD009184D4 /* ListRepository.swift */,
 				73D04CBD2966CC79009184D4 /* ImageRepository.swift */,
-				73D04CB92966C854009184D4 /* FetchImageUseCase.swift */,
-				73D04CBB2966CBC0009184D4 /* FetchListUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -245,10 +303,10 @@
 		73D04CA22965A9B4009184D4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				73D04CB629669F64009184D4 /* Persistent */,
 				73D04C9F2965A7F1009184D4 /* Entities */,
 				73D04CAF296669DF009184D4 /* Repository */,
 				73D04CA32965AB7F009184D4 /* Network */,
+				73D04CB629669F64009184D4 /* Persistent */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -427,12 +485,18 @@
 				73D04CBC2966CBC0009184D4 /* FetchListUseCase.swift in Sources */,
 				73D04CAB2965B308009184D4 /* URLSessionProtocol.swift in Sources */,
 				736360F229645C6F00EBCC18 /* ContentsCollectionViewDataSource.swift in Sources */,
+				738C73312967D8D900F6E4ED /* UIColor+Extension.swift in Sources */,
+				738C732A2966FB1200F6E4ED /* Observable.swift in Sources */,
 				73D04CC02966CCB1009184D4 /* ImageRepositoryImpl.swift in Sources */,
+				738C73392968054100F6E4ED /* DIContainer.swift in Sources */,
 				736360DE29641DCF00EBCC18 /* TabCollectionViewCell.swift in Sources */,
 				736360D62963E0BD00EBCC18 /* Font.swift in Sources */,
 				73D04CB329666B03009184D4 /* ListRepositoryImpl.swift in Sources */,
+				738C7333296802CB00F6E4ED /* BadgeType.swift in Sources */,
 				73D04CA12965A830009184D4 /* List.swift in Sources */,
+				738C7337296803E200F6E4ED /* BaseCoordinator.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* SaveViewController.swift in Sources */,
+				738C732E2967C88500F6E4ED /* PaddingLabel.swift in Sources */,
 				738C73222966E55000F6E4ED /* Requestable.swift in Sources */,
 				73D04CAE2965B3F8009184D4 /* NetworkService.swift in Sources */,
 				736360ED296458BB00EBCC18 /* SaveCollectionViewCell.swift in Sources */,
