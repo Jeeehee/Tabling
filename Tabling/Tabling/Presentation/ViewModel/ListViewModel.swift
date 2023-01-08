@@ -67,6 +67,6 @@ extension ListViewModel {
     
     // MARK: - Private function
     private func mappingData() {
-        items.value = list.map { ListItemViewModel.init(restatrants: $0) }
+        items.value = list.map { ListItemViewModel.init(useCase: imageUseCase.value, restatrants: $0) }
     }
 }

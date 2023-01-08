@@ -8,7 +8,6 @@
 import UIKit
 
 final class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    var imageUseCase: FetchImageUseCase?
     var viewModel: ListViewModelProtocol?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -18,7 +17,7 @@ final class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as? ListCollectionViewCell else { return UICollectionViewCell() }
         let data = viewModel?.items.value[indexPath.item]
-        cell.configureCellData(useCase: imageUseCase, with: data)
+        cell.configureCellData(with: data)
         return cell
     }
     

@@ -40,7 +40,6 @@ class MainViewController: UIViewController {
     private func bind(to viewModel: ListViewModelProtocol) {
         viewModel.items.observe(on: self) { _ in
             self.listCollectionViewDelegateNDataSource.viewModel = viewModel
-            self.listCollectionViewDelegateNDataSource.imageUseCase = viewModel.imageUseCase.value
             
             DispatchQueue.main.async {
                 self.listCollectionView.reloadData()

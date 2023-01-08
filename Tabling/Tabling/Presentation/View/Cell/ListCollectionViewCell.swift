@@ -25,7 +25,6 @@ final class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var badgeLabel: PaddingLabel!
     @IBOutlet weak var isNewLabel: PaddingLabel!
     
-    private var imageUseCase: FetchImageUseCase?
     private var viewModel: ListItemViewModel?
 
     override func prepareForReuse() {
@@ -77,9 +76,9 @@ final class ListCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Inject Data
 extension ListCollectionViewCell {
-    func configureCellData(useCase: FetchImageUseCase?, with model: ListItemViewModel?) {
-        guard let useCase = useCase, let model = model else { return }
-        self.imageUseCase = useCase
+    func configureCellData(with model: ListItemViewModel?) {
+        guard let model = model else { return }
+        self.viewModel = model
         
         categoryLabel.text = model.classification
         locationLabel.text = model.summaryAddress
@@ -94,7 +93,7 @@ extension ListCollectionViewCell {
     }
     
     private func updateImage(_ image: String) {
-        imageUseCase?.start(image) { result in
+        viewModel?.useCase.start(image) { result in
             DispatchQueue.main.async {
                 self.imageView.image = UIImage(data: result)
             }

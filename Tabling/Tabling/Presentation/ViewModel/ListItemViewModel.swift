@@ -8,6 +8,8 @@
 import Foundation
 
 struct ListItemViewModel {
+    let useCase: FetchImageUseCase
+    
     let thumbnail: String
     let classification: String
     let summaryAddress: String
@@ -21,7 +23,9 @@ struct ListItemViewModel {
 }
 
 extension ListItemViewModel {
-    init(restatrants: Restaurant) {
+    init(useCase: FetchImageUseCase, restatrants: Restaurant) {
+        self.useCase = useCase
+        
         self.thumbnail = restatrants.thumbnail
         self.classification = restatrants.classification
         self.summaryAddress = restatrants.summaryAddress
