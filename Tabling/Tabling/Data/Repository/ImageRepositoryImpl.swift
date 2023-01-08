@@ -9,32 +9,35 @@ import Foundation
 
 final class ImageRepositoryImpl {
     private let cache: ImageCacheStorage
+    private let session: URLSession
     
-    init(cache: ImageCacheStorage) {
+    init(cache: ImageCacheStorage, session: URLSession = URLSession.shared) {
         self.cache = cache
+        self.session = session
     }
 }
 
 extension ImageRepositoryImpl: ImageRepository {
-    func loadImage( _ url: String, completionHandler: @escaping (Data?) -> Void) {
+    func fetchImage( _ url: String, completionHandler: @escaping (Data?) -> Void) {
         guard let cacheKey = cache.stringToNSURL(url) else { return }
         guard cache.checkCache(for: cacheKey) == nil else {
-            completionHandler(cache.checkCache(for: cacheKey))
+            completionHandler(self.cache.checkCache(for: cacheKey))
             return
         }
         
         guard let url = URL(string: url) else { return }
         
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data, error == nil else { return }
+        session.downloadTask(with: url) { url, _, error in
+            guard let url = url, error == nil else { return }
             
-            self?.cache.store(data, cacheKey)
-            
-            DispatchQueue.main.async {
+            do {
+                let data = try Data(contentsOf: url)
                 completionHandler(data)
+                self.cache.store(data, cacheKey)
+            } catch {
+                completionHandler(nil)
             }
             
         }.resume()
     }
-    
 }

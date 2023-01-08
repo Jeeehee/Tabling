@@ -15,7 +15,7 @@ final class FetchImageUseCase {
     }
     
     func start(_ url: String, completionHandler: @escaping (Data) -> Void) {
-        repository.loadImage(url) { imageData in
+        repository.fetchImage(url) { imageData in
             guard let imageData = imageData else { return }
             completionHandler(imageData)
         }

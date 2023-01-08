@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ImageRepository {
-    func loadImage( _ url: String, completionHandler: @escaping (Data?) -> Void)
+    func fetchImage( _ url: String, completionHandler: @escaping (Data?) -> Void)
 }
