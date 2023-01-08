@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Tabling
 //
 //  Created by Jihee hwang on 2023/01/03.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class SaveViewController: UIViewController {
+class MainViewController: UIViewController {
     private var viewModel: ListViewModelProtocol?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tabCollectionView: UICollectionView!
-    @IBOutlet weak var contentsCollectionView: UICollectionView!
+    @IBOutlet weak var listCollectionView: UICollectionView!
     
     private let tabCollectionViewDelegateNDataSource = TabCollectionViewDataSource()
-    private let contentCollectionViewDelegateNDataSource = ContentsCollectionViewDataSource()
+    private let listCollectionViewDelegateNDataSource = ListCollectionViewDataSource()
 
     init?(coder: NSCoder, viewModel: ListViewModelProtocol) {
         self.viewModel = viewModel
@@ -39,11 +39,11 @@ class SaveViewController: UIViewController {
     
     private func bind(to viewModel: ListViewModelProtocol) {
         viewModel.items.observe(on: self) { _ in
-            self.contentCollectionViewDelegateNDataSource.viewModel = viewModel
-            self.contentCollectionViewDelegateNDataSource.imageUseCase = viewModel.imageUseCase.value
+            self.listCollectionViewDelegateNDataSource.viewModel = viewModel
+            self.listCollectionViewDelegateNDataSource.imageUseCase = viewModel.imageUseCase.value
             
             DispatchQueue.main.async {
-                self.contentsCollectionView.reloadData()
+                self.listCollectionView.reloadData()
             }
         }
     }
@@ -66,21 +66,21 @@ class SaveViewController: UIViewController {
     }
     
     private func setUpContentsCollectionView() {
-        contentsCollectionView.delegate = contentCollectionViewDelegateNDataSource
-        contentsCollectionView.dataSource = contentCollectionViewDelegateNDataSource
+        listCollectionView.delegate = listCollectionViewDelegateNDataSource
+        listCollectionView.dataSource = listCollectionViewDelegateNDataSource
         
-        let nibName = UINib(nibName: SaveCollectionViewCell.identifier, bundle: nil)
-        contentsCollectionView.register(nibName, forCellWithReuseIdentifier: SaveCollectionViewCell.identifier)
+        let nibName = UINib(nibName: ListCollectionViewCell.identifier, bundle: nil)
+        listCollectionView.register(nibName, forCellWithReuseIdentifier: ListCollectionViewCell.identifier)
     }
     
     private func updateItems() {
         DispatchQueue.main.async {
-            self.contentsCollectionView.reloadData()
+            self.listCollectionView.reloadData()
         }
     }
 }
 
-extension SaveViewController: TabCollectionViewDelegate {
+extension MainViewController: TabCollectionViewDelegate {
     func scrollToIndex(to index: Int) {
         viewModel?.didChangeTab(index)
     }

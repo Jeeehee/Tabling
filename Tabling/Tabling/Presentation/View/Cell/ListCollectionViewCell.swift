@@ -1,5 +1,5 @@
 //
-//  SaveCollectionViewCell.swift
+//  ListCollectionViewCell.swift
 //  Tabling
 //
 //  Created by Jihee hwang on 2023/01/03.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SaveCollectionViewCell: UICollectionViewCell {
+final class ListCollectionViewCell: UICollectionViewCell {
     static var identifier: String {
         return "\(self)"
     }
@@ -52,8 +52,8 @@ final class SaveCollectionViewCell: UICollectionViewCell {
         categoryLabel.font = .init(name: Font.NotoSans.regular, size: 13)
         locationLabel.font = .init(name: Font.NotoSans.regular, size: 13)
         nameLabel.font = .init(name: Font.NotoSans.medium, size: 18)
-        ratingLabel.font = .init(name: Font.NotoSans.regular, size: 14)
-        numberOfReviewLabel.font = .init(name: Font.NotoSans.regular, size: 14)
+        ratingLabel.font = .init(name: Font.Roboto.regular, size: 14)
+        numberOfReviewLabel.font = .init(name: Font.Roboto.regular, size: 14)
         watingLabel.font = .init(name: Font.NotoSans.regular, size: 14)
     }
     
@@ -76,7 +76,7 @@ final class SaveCollectionViewCell: UICollectionViewCell {
 }
 
 // MARK: - Inject Data
-extension SaveCollectionViewCell {
+extension ListCollectionViewCell {
     func configureCellData(useCase: FetchImageUseCase?, with model: ListItemViewModel?) {
         guard let useCase = useCase, let model = model else { return }
         self.imageUseCase = useCase

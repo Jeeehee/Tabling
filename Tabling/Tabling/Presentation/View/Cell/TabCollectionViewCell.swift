@@ -26,6 +26,7 @@ class TabCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Inject Data
 extension TabCollectionViewCell {
     func configureCellData(_ title: String) {
         titleLabel.text = title
