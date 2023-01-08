@@ -24,7 +24,6 @@ class TabCollectionViewCell: UICollectionViewCell {
             titleLabel.textColor = isSelected ? .black : .lightGray
         }
     }
-    
 }
 
 extension TabCollectionViewCell {

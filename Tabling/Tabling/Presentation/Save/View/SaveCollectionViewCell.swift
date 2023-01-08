@@ -11,7 +11,9 @@ final class SaveCollectionViewCell: UICollectionViewCell {
     static var identifier: String {
         return "\(self)"
     }
+    
     @IBOutlet weak var contentStackView: UIStackView!
+    @IBOutlet weak var categorizeStackView: UIStackView!
     @IBOutlet weak var detailInfoStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -21,42 +23,63 @@ final class SaveCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var numberOfReviewLabel: UILabel!
     @IBOutlet weak var watingLabel: UILabel!
     @IBOutlet weak var badgeLabel: PaddingLabel!
+    @IBOutlet weak var isNewLabel: PaddingLabel!
+    
+    private var imageUseCase: FetchImageUseCase?
+    private var viewModel: ListItemViewModel?
+
+    override func prepareForReuse() {
+        imageView.image = nil
+        categoryLabel.text = nil
+        locationLabel.text = nil
+        nameLabel.text = nil
+        ratingLabel.text = nil
+        numberOfReviewLabel.text = nil
+        watingLabel.text = nil
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureViews()
-        backgroundColor = .white
-        imageView.backgroundColor = .black
         
+        setUpViews()
     }
     
-    private func configureViews() {
-        contentStackView.setCustomSpacing(10, after: detailInfoStackView)
-        detailInfoStackView.setCustomSpacing(15, after: numberOfReviewLabel)
+    private func setUpViews() {
+        setUpStackViews()
         imageView.layer.cornerRadius = 10
+        isNewLabel.layer.cornerRadius = 7
         
         categoryLabel.font = .init(name: Font.NotoSans.regular, size: 13)
         locationLabel.font = .init(name: Font.NotoSans.regular, size: 13)
-        nameLabel.font = .init(name: Font.NotoSans.medium, size: 21)
+        nameLabel.font = .init(name: Font.NotoSans.medium, size: 18)
         ratingLabel.font = .init(name: Font.NotoSans.regular, size: 14)
         numberOfReviewLabel.font = .init(name: Font.NotoSans.regular, size: 14)
         watingLabel.font = .init(name: Font.NotoSans.regular, size: 14)
-        setUpBadgeLabel()
     }
     
-    private func setUpBadgeLabel() {
-        badgeLabel.font = .init(name: Font.NotoSans.medium, size: 13)
-        badgeLabel.textColor = .tablingRed
-        badgeLabel.layer.cornerRadius = 16
-        badgeLabel.padding = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
-        badgeLabel.layer.borderWidth = 1
-        badgeLabel.layer.borderColor = UIColor.tablingRed!.cgColor
+    private func setUpStackViews() {
+        categorizeStackView.setCustomSpacing(8, after: locationLabel)
+        detailInfoStackView.setCustomSpacing(15, after: numberOfReviewLabel)
+        contentStackView.setCustomSpacing(-5, after: categorizeStackView)
+        contentStackView.setCustomSpacing(5, after: detailInfoStackView)
+    }
+    
+    private func setUpPaddingLabel(to label: PaddingLabel, title: String, color: UIColor) {
+        label.text = title
+        label.font = .init(name: Font.NotoSans.medium, size: 13)
+        label.textColor = color
+        label.layer.cornerRadius = 16
+        label.padding = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = color.cgColor
     }
 }
 
+// MARK: - Inject Data
 extension SaveCollectionViewCell {
-    func configureCellData(_ model: Restaurant?) {
-        guard let model = model else { return }
+    func configureCellData(useCase: FetchImageUseCase?, with model: ListItemViewModel?) {
+        guard let useCase = useCase, let model = model else { return }
+        self.imageUseCase = useCase
         
         categoryLabel.text = model.classification
         locationLabel.text = model.summaryAddress
@@ -64,5 +87,31 @@ extension SaveCollectionViewCell {
         ratingLabel.text = "\(model.rating)"
         numberOfReviewLabel.text = "(\(model.reviewCount))"
         watingLabel.text = "대기 \(model.waitingCount)명"
+        
+        updateImage(model.thumbnail)
+        isRemoteWaiting(model.isRemoteWaiting)
+        isNew(model.isNew)
+    }
+    
+    private func updateImage(_ image: String) {
+        imageUseCase?.start(image) { result in
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: result)
+            }
+        }
+    }
+    
+    private func isRemoteWaiting(_ isRemoteWaiting: Bool) {
+        switch isRemoteWaiting {
+        case true: setUpPaddingLabel(to: badgeLabel, title: BadgeType.quickBooking.title, color: BadgeType.quickBooking.color)
+        case false: setUpPaddingLabel(to: badgeLabel, title: BadgeType.remoteWaiting.title, color: BadgeType.remoteWaiting.color)
+        }
+    }
+    
+    private func isNew(_ isNew: Bool) {
+        switch isNew {
+        case true: isNewLabel.isHidden = false
+        case false: isNewLabel.isHidden = true
+        }
     }
 }

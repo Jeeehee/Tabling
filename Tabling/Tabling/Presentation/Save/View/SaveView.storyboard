@@ -13,7 +13,7 @@
         <!--Save View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SaveViewController" customModule="Tabling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SaveView" id="Y6W-OH-hqX" customClass="SaveViewController" customModule="Tabling" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="R4q-28-gUh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="UMS-1B-8jC"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="47u-vi-xJq">
                                     <size key="itemSize" width="120" height="30"/>
@@ -49,6 +50,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="120" height="30"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -56,17 +58,17 @@
                                 <rect key="frame" x="20" y="175" width="353" height="643"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fIk-bi-dH6">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="128" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SaveCollectionViewCell" id="6tC-eV-Vlp" customClass="SaveCollectionViewCell" customModule="Tabling" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="SaveCollectionViewCell" id="6tC-eV-Vlp" customClass="SaveCollectionViewCell" customModule="Tabling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TS9-Kg-l1p">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -76,15 +78,15 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ceA-FS-BB6" firstAttribute="top" secondItem="36n-x9-xYe" secondAttribute="bottom" constant="20" id="23S-4X-We7"/>
-                            <constraint firstItem="GSy-eN-V1p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="6Zj-OR-Umw"/>
-                            <constraint firstItem="ceA-FS-BB6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="Oa5-l7-z6X"/>
-                            <constraint firstItem="36n-x9-xYe" firstAttribute="top" secondItem="GSy-eN-V1p" secondAttribute="bottom" constant="15" id="VUG-Gj-rgp"/>
-                            <constraint firstItem="36n-x9-xYe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="lXS-rs-RZF"/>
-                            <constraint firstItem="36n-x9-xYe" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="lXW-7y-F0n"/>
-                            <constraint firstItem="ceA-FS-BB6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="msL-So-lJq"/>
-                            <constraint firstItem="GSy-eN-V1p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="uQm-0k-tur"/>
-                            <constraint firstItem="ceA-FS-BB6" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="vHR-q9-em0"/>
+                            <constraint firstItem="36n-x9-xYe" firstAttribute="top" secondItem="GSy-eN-V1p" secondAttribute="bottom" constant="15" id="86R-ew-SpN"/>
+                            <constraint firstItem="36n-x9-xYe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Tmw-bY-r4e"/>
+                            <constraint firstItem="GSy-eN-V1p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Wua-ke-BaS"/>
+                            <constraint firstItem="36n-x9-xYe" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="cNV-0z-x1r"/>
+                            <constraint firstItem="ceA-FS-BB6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="guK-OO-lRK"/>
+                            <constraint firstItem="ceA-FS-BB6" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="i2b-HQ-SeG"/>
+                            <constraint firstItem="ceA-FS-BB6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="jIc-xp-w6V"/>
+                            <constraint firstItem="ceA-FS-BB6" firstAttribute="top" secondItem="36n-x9-xYe" secondAttribute="bottom" constant="20" id="vT9-Ug-kn6"/>
+                            <constraint firstItem="GSy-eN-V1p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="xJ6-UD-p3m"/>
                         </constraints>
                     </view>
                     <connections>

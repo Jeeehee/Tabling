@@ -35,8 +35,8 @@
 		738C732E2967C88500F6E4ED /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C732D2967C88500F6E4ED /* PaddingLabel.swift */; };
 		738C73312967D8D900F6E4ED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73302967D8D900F6E4ED /* UIColor+Extension.swift */; };
 		738C7333296802CB00F6E4ED /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C7332296802CB00F6E4ED /* BadgeType.swift */; };
-		738C7337296803E200F6E4ED /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C7336296803E200F6E4ED /* BaseCoordinator.swift */; };
 		738C73392968054100F6E4ED /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C73382968054100F6E4ED /* DIContainer.swift */; };
+		738C733B296A7A5E00F6E4ED /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C733A296A7A5E00F6E4ED /* ListItemViewModel.swift */; };
 		73D04CA12965A830009184D4 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA02965A830009184D4 /* List.swift */; };
 		73D04CA92965B1F1009184D4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CA82965B1F1009184D4 /* NetworkError.swift */; };
 		73D04CAB2965B308009184D4 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */; };
@@ -83,8 +83,8 @@
 		738C732D2967C88500F6E4ED /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		738C73302967D8D900F6E4ED /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		738C7332296802CB00F6E4ED /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
-		738C7336296803E200F6E4ED /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		738C73382968054100F6E4ED /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		738C733A296A7A5E00F6E4ED /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
 		73D04CA02965A830009184D4 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		73D04CA82965B1F1009184D4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		73D04CAA2965B308009184D4 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
@@ -146,7 +146,6 @@
 		736360C42963DCC800EBCC18 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				738C7335296803CB00F6E4ED /* Coordinator */,
 				736360B02963D7CA00EBCC18 /* AppDelegate.swift */,
 				736360B22963D7CA00EBCC18 /* SceneDelegate.swift */,
 				738C73382968054100F6E4ED /* DIContainer.swift */,
@@ -243,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				73D04CC12966D048009184D4 /* ListViewModel.swift */,
+				738C733A296A7A5E00F6E4ED /* ListItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -272,14 +272,6 @@
 				73D04CB92966C854009184D4 /* FetchImageUseCase.swift */,
 			);
 			path = UseCase;
-			sourceTree = "<group>";
-		};
-		738C7335296803CB00F6E4ED /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				738C7336296803E200F6E4ED /* BaseCoordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		73D04C9E2965A7E4009184D4 /* Domain */ = {
@@ -494,7 +486,7 @@
 				73D04CB329666B03009184D4 /* ListRepositoryImpl.swift in Sources */,
 				738C7333296802CB00F6E4ED /* BadgeType.swift in Sources */,
 				73D04CA12965A830009184D4 /* List.swift in Sources */,
-				738C7337296803E200F6E4ED /* BaseCoordinator.swift in Sources */,
+				738C733B296A7A5E00F6E4ED /* ListItemViewModel.swift in Sources */,
 				736360B52963D7CA00EBCC18 /* SaveViewController.swift in Sources */,
 				738C732E2967C88500F6E4ED /* PaddingLabel.swift in Sources */,
 				738C73222966E55000F6E4ED /* Requestable.swift in Sources */,
