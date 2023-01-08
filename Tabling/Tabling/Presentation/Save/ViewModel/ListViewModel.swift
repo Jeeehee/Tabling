@@ -9,10 +9,12 @@ import Foundation
 
 protocol ListViewModelInput {
     func viewDidLoad()
+    func didChangeTab(_ index: Int)
 }
 
 protocol ListViewModelOutput {
-    var items: Observable<[Restaurant]> { get }
+    var items: Observable<[ListItemViewModel]> { get }
+    var imageUseCase: Observable<FetchImageUseCase> { get }
 }
 
 protocol ListViewModelProtocol: ListViewModelInput, ListViewModelOutput {
@@ -24,19 +26,21 @@ final class ListViewModel: ListViewModelProtocol {
     var input: ListViewModelInput { self }
     var output: ListViewModelOutput { self }
     
-    private let useCase: FetchListUseCase
+    private let listUseCase: FetchListUseCase
     private var list: [Restaurant] = []
     
     // MARK: - OUTPUT
-    var items: Observable<[Restaurant]> = Observable([])
-    
-    init(fetchListUseCase: FetchListUseCase) {
-        self.useCase = fetchListUseCase
+    var items: Observable<[ListItemViewModel]> = Observable([])
+    let imageUseCase: Observable<FetchImageUseCase>
+
+    init(listUseCase: FetchListUseCase, imageUseCase: FetchImageUseCase) {
+        self.listUseCase = listUseCase
+        self.imageUseCase = Observable(imageUseCase)
     }
     
-    private func load() {
-        guard let urlRequest = EndPoint.save.urlRequest else { return }
-        useCase.start(List.self, request: urlRequest) { result in
+    private func load(_ type: EndPoint) {
+        guard let urlRequest = type.urlRequest else { return }
+        listUseCase.start(List.self, request: urlRequest) { result in
             switch result {
             case .success(let data):
                 self.list = data.list
@@ -51,11 +55,18 @@ final class ListViewModel: ListViewModelProtocol {
 extension ListViewModel {
     // MARK: - INPUT, View event methods
     func viewDidLoad() {
-        load()
+        load(.save)
+    }
+    
+    func didChangeTab(_ index: Int) {
+        switch index {
+        case 0: load(.save)
+        default: load(.resent)
+        }
     }
     
     // MARK: - Private function
     private func mappingData() {
-        items.value = list
+        items.value = list.map { ListItemViewModel.init(restatrants: $0) }
     }
 }

@@ -34,10 +34,6 @@ final class DIContainer {
     
     // MARK: - ViewModel
     func makeListViewModel() -> ListViewModelProtocol {
-        return ListViewModel(fetchListUseCase: makeFetchListUseCase())
-    }
-    
-    func makeSaveViewController(with viewModel: ListViewModelProtocol) -> UIViewController {
-        return SaveViewController(viewModel: viewModel)
+        return ListViewModel(listUseCase: makeFetchListUseCase(), imageUseCase: makeFetchImageUseCase())
     }
 }
