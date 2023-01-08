@@ -8,28 +8,22 @@
 import UIKit
 
 final class ContentsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    var restaurantList: [Restaurant]?
+    var imageUseCase: FetchImageUseCase?
+    var viewModel: ListViewModelProtocol?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        restaurantList?.count ?? 0
+        viewModel?.items.value.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SaveCollectionViewCell.identifier, for: indexPath) as? SaveCollectionViewCell else { return UICollectionViewCell() }
-        let data = fetchRestaurantList(index: indexPath)
-        cell.configureCellData(data)
+        let data = viewModel?.items.value[indexPath.item]
+        cell.configureCellData(useCase: imageUseCase, with: data)
         return cell
     }
     
     // MARK: FlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 130)
-    }
-}
-
-// MARK: Custom Method
-extension ContentsCollectionViewDataSource {
-    private func fetchRestaurantList(index: IndexPath) -> Restaurant? {
-        return restaurantList?[index.item]
+        return CGSize(width: collectionView.bounds.width, height: 120)
     }
 }
