@@ -7,7 +7,13 @@
 
 import UIKit
 
-final class TabCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+protocol TabCollectionViewDelegate: AnyObject {
+    func scrollToIndex(to index: Int)
+}
+
+final class TabCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    weak var delegate: TabCollectionViewDelegate?
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         2
     }
@@ -18,10 +24,14 @@ final class TabCollectionViewDataSource: NSObject, UICollectionViewDataSource, U
         guard let tabType = TabType.init(rawValue: indexPath.item) else { return UICollectionViewCell() }
         
         switch tabType {
-        case .first: cell.configureCellData(TabType.first.title)
-        case .second: cell.configureCellData(TabType.second.title)
+        case .save: cell.configureCellData(TabType.save.title)
+        case .resent: cell.configureCellData(TabType.resent.title)
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.scrollToIndex(to: indexPath.row)
     }
 }

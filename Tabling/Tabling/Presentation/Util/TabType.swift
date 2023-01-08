@@ -8,12 +8,12 @@
 import Foundation
 
 enum TabType: Int, CaseIterable {
-    case first, second
+    case save, resent
     
     var title: String {
         switch self {
-        case .first: return "저장"
-        case .second: return "최근본"
+        case .save: return "저장"
+        case .resent: return "최근본"
         }
     }
 }
