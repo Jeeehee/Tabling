@@ -43,11 +43,11 @@ final class ListViewModel: ListViewModelProtocol {
     
     private func load(_ type: EndPoint) {
         guard let urlRequest = type.urlRequest else { return }
-        listUseCase.start(List.self, request: urlRequest) { result in
+        listUseCase.start(List.self, request: urlRequest) { [weak self] result in
             switch result {
             case .success(let data):
-                self.list = data.list
-                self.mappingData()
+                self?.list = data.list
+                self?.mappingData()
             case .failure(let error):
                 fatalError("\(error)")
             }

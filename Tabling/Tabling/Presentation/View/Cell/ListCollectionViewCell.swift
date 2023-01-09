@@ -102,8 +102,8 @@ extension ListCollectionViewCell {
     
     private func isRemoteWaiting(_ isRemoteWaiting: Bool) {
         switch isRemoteWaiting {
-        case true: setUpPaddingLabel(to: badgeLabel, title: BadgeType.quickBooking.title, color: BadgeType.quickBooking.color)
-        case false: setUpPaddingLabel(to: badgeLabel, title: BadgeType.remoteWaiting.title, color: BadgeType.remoteWaiting.color)
+        case true: setUpPaddingLabel(to: badgeLabel, title: BadgeType.remoteWaiting.title, color: BadgeType.remoteWaiting.color)
+        case false: setUpPaddingLabel(to: badgeLabel, title: BadgeType.quickBooking.title, color: BadgeType.quickBooking.color)
         }
     }
     
