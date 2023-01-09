@@ -19,4 +19,8 @@ struct Font {
         static let medium = "NotoSansKR-Medium"
         static let regular = "NotoSansKR-Regular"
     }
+    
+    enum SCDream {
+        static let scDream6 = "S-CoreDream-6Bold"
+    }
 }

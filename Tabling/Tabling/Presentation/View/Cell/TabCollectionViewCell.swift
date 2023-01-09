@@ -16,7 +16,6 @@ class TabCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.font = .init(name: Font.NotoSans.medium, size: 16)
     }
     
     override var isSelected: Bool {

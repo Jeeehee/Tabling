@@ -8,5 +8,5 @@
 import UIKit
 
 extension UIColor {
-    static let tablingRed = UIColor(named: "TablingRed")
+    static let tablingRed = UIColor(named: "tablingRed") ?? UIColor(red: 255, green: 34, blue: 0, alpha: 1)
 }
