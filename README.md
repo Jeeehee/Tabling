@@ -1,5 +1,5 @@
 # Tabling
-> **기간**  :  2023.01.02 ~ 2023.01.09
+> **기간**  :  2023.01.02 ~ 2023.01.09   
 > **Architecture**  :  MVVM + CleanArchitecture  
 > **Library**  :  SwiftLint
 
