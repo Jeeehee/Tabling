@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol ListCollectionViewDelegate: AnyObject {
+    func selectedCell(to index: Int)
+}
+
 final class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    weak var delegate: ListCollectionViewDelegate?
     var viewModel: ListViewModelProtocol?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -19,6 +24,10 @@ final class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         let data = viewModel?.items.value[indexPath.item]
         cell.configureCellData(with: data)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.selectedCell(to: indexPath.item)
     }
     
     // MARK: FlowLayout

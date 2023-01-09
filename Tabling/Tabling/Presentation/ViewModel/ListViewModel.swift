@@ -10,10 +10,12 @@ import Foundation
 protocol ListViewModelInput {
     func viewDidLoad()
     func didChangeTab(_ index: Int)
+    func didSelectCell(_ index: Int)
 }
 
 protocol ListViewModelOutput {
     var items: Observable<[ListItemViewModel]> { get }
+    var selectItem: Observable<[ListItemViewModel]> { get }
     var imageUseCase: Observable<FetchImageUseCase> { get }
 }
 
@@ -31,6 +33,7 @@ final class ListViewModel: ListViewModelProtocol {
     
     // MARK: - OUTPUT
     var items: Observable<[ListItemViewModel]> = Observable([])
+    var selectItem: Observable<[ListItemViewModel]> = Observable([])
     let imageUseCase: Observable<FetchImageUseCase>
 
     init(listUseCase: FetchListUseCase, imageUseCase: FetchImageUseCase) {
@@ -45,8 +48,8 @@ final class ListViewModel: ListViewModelProtocol {
             case .success(let data):
                 self.list = data.list
                 self.mappingData()
-            case .failure(let failure):
-                print("Error")
+            case .failure(let error):
+                fatalError("\(error)")
             }
         }
     }
@@ -63,6 +66,10 @@ extension ListViewModel {
         case 0: load(.save)
         default: load(.resent)
         }
+    }
+    
+    func didSelectCell(_ index: Int) {
+        selectItem.value = [items.value[index]]
     }
     
     // MARK: - Private function

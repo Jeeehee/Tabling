@@ -67,20 +67,29 @@ class MainViewController: UIViewController {
     private func setUpContentsCollectionView() {
         listCollectionView.delegate = listCollectionViewDelegateNDataSource
         listCollectionView.dataSource = listCollectionViewDelegateNDataSource
+        listCollectionViewDelegateNDataSource.delegate = self
         
         let nibName = UINib(nibName: ListCollectionViewCell.identifier, bundle: nil)
         listCollectionView.register(nibName, forCellWithReuseIdentifier: ListCollectionViewCell.identifier)
     }
-    
-    private func updateItems() {
-        DispatchQueue.main.async {
-            self.listCollectionView.reloadData()
-        }
-    }
 }
 
+// MARK: - Delegate
 extension MainViewController: TabCollectionViewDelegate {
     func scrollToIndex(to index: Int) {
         viewModel?.didChangeTab(index)
+    }
+}
+
+// MARK: - Segue
+extension MainViewController: ListCollectionViewDelegate {
+    func selectedCell(to index: Int) {
+        viewModel?.didSelectCell(index)
+        performSegue(withIdentifier: "ToDetailViewController", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController = segue.destination as? DetailViewController else { return }
+        nextViewController.viewModel = viewModel?.selectItem.value.first
     }
 }

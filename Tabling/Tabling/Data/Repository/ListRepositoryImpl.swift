@@ -40,12 +40,8 @@ extension ListRepositoryImpl: ListRepository, ResponseDecoder {
     }
     
     func decode<T: Decodable>(_ type: T.Type, _ data: Data?, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
-        do {
-            guard let data = data else { completionHandler(.failure(.emptyData)); return }
-            guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else { return }
-            completionHandler(.success(decodedResponse))
-        } catch {
-            completionHandler(.failure(.decodeFailed))
-        }
+        guard let data = data else { completionHandler(.failure(.emptyData)); return }
+        guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else { return }
+        completionHandler(.success(decodedResponse))
     }
 }
