@@ -38,11 +38,11 @@ class MainViewController: UIViewController {
     }
     
     private func bind(to viewModel: ListViewModelProtocol) {
-        viewModel.items.observe(on: self) { _ in
-            self.listCollectionViewDelegateNDataSource.viewModel = viewModel
+        viewModel.items.observe(on: self) { [weak self] _ in
+            self?.listCollectionViewDelegateNDataSource.viewModel = viewModel
             
             DispatchQueue.main.async {
-                self.listCollectionView.reloadData()
+                self?.listCollectionView.reloadData()
             }
         }
     }

@@ -19,7 +19,7 @@ enum BadgeType: String {
     
     var color: UIColor {
         switch self {
-        case .remoteWaiting: return .black
+        case .remoteWaiting: return .tablingRed!
         case .quickBooking: return .gray
         }
     }

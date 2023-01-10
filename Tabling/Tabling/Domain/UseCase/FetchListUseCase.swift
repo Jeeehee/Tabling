@@ -19,7 +19,7 @@ final class FetchListUseCase {
             switch result {
             case .success(let data):
                 completion(.success(data))
-            case .failure(let error):
+            case .failure(_):
                 completion(.failure(.requestFailed))
             }
         }
